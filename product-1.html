@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcana Emporium — Товар #1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="branding">
+            <div class="sigil" aria-hidden="true">⚚</div>
+            <h1><a href="index.html">ABAMA Shop</a></h1>
+        </div>
+        <div class="header-actions">
+            <button id="toggleTheme" class="ghost-btn" aria-label="Сменить тему">☾</button>
+            <button id="cartButton" class="cart-btn" aria-label="Открыть корзину">
+                <span class="cart-icon">🛒</span>
+                <span id="cartCount" class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="container"></main>
+
+    <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+        <div class="cart-header">
+            <h2>Корзина</h2>
+            <button id="closeCart" class="ghost-btn" aria-label="Закрыть корзину">✕</button>
+        </div>
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="total">
+                <span>Итого:</span>
+                <strong id="cartTotal">0</strong>
+                <span class="currency">зл</span>
+            </div>
+            <button id="checkoutBtn" class="primary-btn">Оформить</button>
+        </div>
+    </aside>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <canvas id="fxCanvas" class="fx-canvas" aria-hidden="true"></canvas>
+
+    <script>window.PRODUCT_ID = 1;</script>
+    <script src="src/js/data.js"></script>
+    <script src="src/js/app.js"></script>
+</body>
+</html>
+
+
