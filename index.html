@@ -19,19 +19,36 @@
             <div class="search">
                 <input id="searchInput" type="search" placeholder="Поиск артефактов..." aria-label="Поиск">
             </div>
-            <button id="toggleTheme" class="ghost-btn" aria-label="Сменить тему">☾</button>
-            <button id="cartButton" class="cart-btn" aria-label="Открыть корзину">
-                <span class="cart-icon">🛒</span>
-                <span id="cartCount" class="cart-count">0</span>
-            </button>
+<!--            <button id="cartButton" class="cart-btn" aria-label="Открыть корзину">-->
+<!--                <span class="cart-icon">🛒</span>-->
+<!--                <span id="cartCount" class="cart-count">0</span>-->
+<!--            </button>-->
         </div>
     </header>
 
     <main class="container">
-        <section id="productGrid" class="grid"></section>
+        <div class="filters">
+            <div id="rarityChips" class="chips" role="radiogroup" aria-label="Фильтр по редкости">
+                <button class="chip is-active" data-rarity="all" role="radio" aria-checked="true">Все</button>
+                <button class="chip" data-rarity="common" role="radio" aria-checked="false">Обычное</button>
+                <button class="chip" data-rarity="uncommon" role="radio" aria-checked="false">Необычное</button>
+                <button class="chip" data-rarity="rare" role="radio" aria-checked="false">Редкое</button>
+                <button class="chip" data-rarity="legendary" role="radio" aria-checked="false">Легендарное</button>
+            </div>
+            <div class="sort">
+                <select id="sortSelect" aria-label="Сортировка">
+                    <option value="popular">По популярности</option>
+                    <option value="priceAsc">Цена: по возрастанию</option>
+                    <option value="priceDesc">Цена: по убыванию</option>
+                    <option value="nameAsc">Название: А-Я</option>
+                    <option value="nameDesc">Название: Я-А</option>
+                </select>
+            </div>
+        </div>
+        <section id="productGrid" class="grid" aria-label="Список товаров"></section>
     </main>
 
-    <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <aside id="cartDrawer" class="cart-drawer" aria-hidden="true" role="dialog" aria-label="Корзина покупок">
         <div class="cart-header">
             <h2>Корзина</h2>
             <button id="closeCart" class="ghost-btn" aria-label="Закрыть корзину">✕</button>
@@ -43,12 +60,11 @@
                 <strong id="cartTotal">0</strong>
                 <span class="currency">зл</span>
             </div>
-            <button id="checkoutBtn" class="primary-btn">Оформить</button>
+            <button id="checkoutBtn" class="primary-btn">Оформить заказ</button>
         </div>
     </aside>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
     <canvas id="fxCanvas" class="fx-canvas" aria-hidden="true"></canvas>
 
     <script src="src/js/data.js"></script>
